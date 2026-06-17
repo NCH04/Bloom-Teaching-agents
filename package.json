@@ -1,0 +1,19 @@
+{
+  "name": "bloomloop",
+  "private": true,
+  "version": "0.1.0",
+  "description": "BloomLoop — a multi-agent mastery-learning tutor that loops until the student masters the goal.",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -n backend,frontend -c blue,magenta \"npm:dev:backend\" \"npm:dev:frontend\"",
+    "dev:backend": "npm run dev -w backend",
+    "dev:frontend": "npm run dev -w frontend",
+    "build": "npm run build -w frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
